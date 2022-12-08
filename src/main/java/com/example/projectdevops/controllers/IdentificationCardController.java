@@ -1,7 +1,8 @@
 package com.example.projectdevops.controllers;
 
-import com.example.projectdevops.models.Book;
-import com.example.projectdevops.services.BookService;
+import com.example.projectdevops.models.IdentificationCard;
+import com.example.projectdevops.services.IdentificationCardService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,26 +13,26 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class IdentificationCardController {
     @Autowired
-    BookService bookService;
+    IdentificationCardService idCardService;
 
     @GetMapping("/all")
-    public List<Book> getBooks()
+    public List<IdentificationCard> getIdCards()
     {
-        List<Book> books = this.bookService.getAllBooks();
-        return books;
+        List<IdentificationCard> idCards = this.idCardService.getAllIds();
+        return idCards;
     }
 
-    @GetMapping("/{bookId}")
-    public Book getBookById(@PathVariable("bookId") Long bookId)
+    @GetMapping("/{cardId}")
+    public IdentificationCard getIdentificationCardById(@PathVariable("cardId") Long cardId)
     {
-        Book book = this.bookService.getBookById(bookId);
-        return book;
+        IdentificationCard idCard = this.idCardService.getIdCardById(cardId);
+        return idCard;
     }
 
-    @PostMapping("/create/{authorId}")
-    public Book createNewBook(@RequestBody Book newBook, @PathVariable("authorId") Long authorId)
+    @PostMapping("/create/{studentId}")
+    public IdentificationCard createNewCard(@RequestBody IdentificationCard idCard, @PathVariable("studentId") Long studentId)
     {
-        Book book = this.bookService.createBook(newBook, authorId);
-        return book;
+        IdentificationCard card = this.idCardService.createIdentificationCard(idCard, studentId);
+        return card;
     }
 }
