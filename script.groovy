@@ -37,7 +37,8 @@ def deployApp() {
 def pushToNexus() {
     echo "pushing the jar file to Nexus maven-snapshots repo..."
     // sh 'mvn dependency:resolve'
-    sh 'mvn clean deploy -Dmaven.test.skip=true'
+    //sh 'mvn clean deploy -Dmaven.test.skip=true'
+    nexusArtifactUploader artifacts: [[artifactId: 'project-devops', classifier: '', file: 'uber.jar', type: 'jar']], credentialsId: '', groupId: 'com.example', nexusUrl: 'localhost:8083', nexusVersion: 'nexus3', protocol: 'http', repository: '', version: '0.0.1-SNAPSHOT'
 }
 
 
