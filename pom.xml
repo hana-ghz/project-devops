@@ -64,7 +64,7 @@
         <snapshotRepository>
             <id>nexus-snapshots</id>
             <uniqueVersion>false</uniqueVersion>
-            <url>http://nexus-container:8081/repository/maven-snapshots/</url>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
