@@ -70,13 +70,6 @@ pipeline {
                 }
             }
         }
-        stage('deploy') {
-            steps {
-                script {
-                    echo 'deploying the application...'
-                }
-            }
-        }
 
     }
 }
