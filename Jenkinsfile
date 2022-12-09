@@ -28,13 +28,13 @@ pipeline {
         //     }
         // }
         
-        stage('test with sonar') {
-            steps {
-                 script {
-                    // gv.sonarTest()
-                 }
-            }
-         }
+        // stage('test with sonar') {
+        //     steps {
+        //         script {
+        //             gv.sonarTest()
+        //         }
+        //     }
+        // }
         
         stage('build app') {
             steps {
