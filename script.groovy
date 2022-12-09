@@ -13,8 +13,12 @@ def buildImage() {
 }
 
 def sonarTest() {
+    mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=DevOpsProject \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=sqp_70c661afd85b650082d03565cc67cd2c3a12b7e7
     echo "Running sonarQube checks..."
-    sh 'mvn clean verify sonar:sonar   -Dmaven.test.skip=true  -Dsonar.projectKey=project-devops   -Dsonar.host.url=http://172.17.0.2:9000   -Dsonar.login=sqp_114f7278795d345ede80d4d31a39c9bd382db6dd'
+    sh 'mvn clean verify sonar:sonar   -Dmaven.test.skip=true  -Dsonar.projectKey=DevOpsProject    -Dsonar.host.url=http://localhost:9000    -Dsonar.login=sqp_70c661afd85b650082d03565cc67cd2c3a12b7e7
 }
 
 
